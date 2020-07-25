@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Matthew Gray, SE245 Lab 1, Grade Average Calculator, July 22 2020
+
 namespace MG_Lab1_SE245
 {
     class Program
@@ -11,19 +13,22 @@ namespace MG_Lab1_SE245
 
         static double calcWeighted(double grade1, double grade2, double grade3, double grade4)
         {
+            //Convert grades using the provided weighting scale
             grade1 = grade1 * 0.2;
             grade2 = grade2 * 0.2;
             grade3 = grade3 * 0.25;
             grade4 = grade4 * 0.35;
 
+            //Add the converted grades together to get the final weighted grade
             double weightGrade = grade1 + grade2 + grade3 + grade4;
 
+            //Return final grade back to main code
             return weightGrade;
         }
 
         static int calcAvg(int grade1, int grade2, int grade3, int grade4)
         {
-            string ltr;
+            //Made this a function just to make the main code look cleaner
             int avg = (grade1 + grade2 + grade3 + grade4) / 4;
 
             return avg;
@@ -31,6 +36,7 @@ namespace MG_Lab1_SE245
 
         static string calcLtr(double avg)
         {
+            //Take grade average and convert it into a letter grade
             string ltr;
 
             if (avg >= 90)
@@ -84,18 +90,21 @@ namespace MG_Lab1_SE245
             Console.Write("Please enter your fourth grade: ");
             strGrade4 = Console.ReadLine();
 
-
+            //Convert grades from strings to integers
             intGrade1 = Convert.ToInt32(strGrade1);
             intGrade2 = Convert.ToInt32(strGrade2);
             intGrade3 = Convert.ToInt32(strGrade3);
             intGrade4 = Convert.ToInt32(strGrade4);
 
+            //Calculate unweighted average and letter grade
             intAvg = calcAvg(intGrade1, intGrade2, intGrade3, intGrade4);
             ltrGrade = calcLtr(intAvg);
             
+            //Convert grades to weighted scale and calculate the letter grade
             weightAvg = calcWeighted(intGrade1, intGrade2, intGrade3, intGrade4);
             weightLtr = calcLtr(weightAvg);
 
+            //Output info to user
             Console.Write($"\n\nThank you, {fullName}.\nYour unweighted average is {intAvg}, and your letter grade is a(n) {ltrGrade}\n");
             Console.Write($"Your weighted average is {weightAvg}, and your letter grade is a(n) {weightLtr}");
             Console.WriteLine("\n\nPress any key to continue");
