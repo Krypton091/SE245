@@ -39,7 +39,7 @@ namespace MG_Midterm_SE245
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Person temp = new Person();
+            PersonV2 temp = new PersonV2();
             temp.FName = txtfName.Text;
             temp.MName = txtmName.Text;
             temp.LName = txtlName.Text;
@@ -50,6 +50,8 @@ namespace MG_Midterm_SE245
             temp.Zipcode = txtzipcode.Text;
             temp.Phone = txtphone.Text;
             temp.Email = txtemail.Text;
+            temp.Cellphone = txtcellphone.Text;
+            temp.InstagramURL = txtinstaURL.Text;
 
             if (temp.Feedback.Contains("ERROR:"))
             {
@@ -58,10 +60,16 @@ namespace MG_Midterm_SE245
             else
             {
                 lblFeedback.Text = "New person" + " \"" + temp.FName + " " + temp.LName + "\" has been succesfully added";
+                lblFeedback.Text = temp.AddARecord();
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

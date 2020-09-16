@@ -18,6 +18,9 @@ namespace MG_Midterm_SE245
         private string zipcode;
         private string phone;
         private string email;
+        private string cellphone;
+        private string instagramURL;
+
         private string feedback = "";
 
         public string FName
@@ -195,6 +198,38 @@ namespace MG_Midterm_SE245
             }
         }
 
+        public string Cellphone
+        {
+            get
+            {
+                return cellphone;
+            }
 
+            set
+            {
+                if (value.Length == 10)
+                {
+                    cellphone = value;
+                }
+
+                else
+                {
+                    cellphone = "INVALID";
+                }
+            }
+        }
+
+        public string InstagramURL
+        {
+            get
+            {
+                return instagramURL;
+            }
+
+            set
+            {
+                instagramURL = value;
+            }
+        }
     }
 }
