@@ -130,7 +130,7 @@ namespace MG_Midterm_SE245
 
                 else
                 {
-                    state = "INVALID";
+                    feedback += "INVALID STATE, USE 2 LETTER ABV";
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace MG_Midterm_SE245
 
                 else
                 {
-                    zipcode = "INVALID";
+                    feedback += "INVALID ZIP, USE 5 DIGITS";
                 }
             }
         }
@@ -172,7 +172,7 @@ namespace MG_Midterm_SE245
 
                 else
                 {
-                    phone = "INVALID";
+                    feedback += "INVALID PHONE, DON'T USE DASHES";
                 }
             }
         }
@@ -186,14 +186,14 @@ namespace MG_Midterm_SE245
 
             set
             {
-                if (value.Length >= 8)
+                if (Validation.IsValidEmail(value))
                 {
                     email = value;
                 }
 
                 else
                 {
-                    email = "INVALID";
+                    feedback += "INVALID EMAIL";
                 }
             }
         }
@@ -214,7 +214,7 @@ namespace MG_Midterm_SE245
 
                 else
                 {
-                    cellphone = "INVALID";
+                    cellphone += "INVALID CELL, DO NOT USE DASHES";
                 }
             }
         }

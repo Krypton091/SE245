@@ -8,3 +8,5 @@ D:\Users\krypt\Documents\School\Q4 - Summer 2020\SE245\SE245\MG_Midterm_SE245\MG
 D:\Users\krypt\Documents\School\Q4 - Summer 2020\SE245\SE245\MG_Midterm_SE245\MG_Midterm_SE245\obj\Debug\MG_Midterm_SE245.csproj.CoreCompileInputs.cache
 D:\Users\krypt\Documents\School\Q4 - Summer 2020\SE245\SE245\MG_Midterm_SE245\MG_Midterm_SE245\obj\Debug\MG_Midterm_SE245.exe
 D:\Users\krypt\Documents\School\Q4 - Summer 2020\SE245\SE245\MG_Midterm_SE245\MG_Midterm_SE245\obj\Debug\MG_Midterm_SE245.pdb
+D:\Users\krypt\Documents\School\Q4 - Summer 2020\SE245\SE245\MG_Midterm_SE245\MG_Midterm_SE245\obj\Debug\MG_Midterm_SE245.Start.resources
+D:\Users\krypt\Documents\School\Q4 - Summer 2020\SE245\SE245\MG_Midterm_SE245\MG_Midterm_SE245\obj\Debug\MG_Midterm_SE245.SearchForm.resources

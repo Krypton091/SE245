@@ -54,6 +54,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtinstaURL = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblPerson_ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -197,35 +199,35 @@
             this.txtemail.Location = new System.Drawing.Point(311, 310);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(235, 20);
-            this.txtemail.TabIndex = 17;
+            this.txtemail.TabIndex = 20;
             // 
             // txtphone
             // 
             this.txtphone.Location = new System.Drawing.Point(311, 277);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(235, 20);
-            this.txtphone.TabIndex = 18;
+            this.txtphone.TabIndex = 19;
             // 
             // txtzipcode
             // 
             this.txtzipcode.Location = new System.Drawing.Point(311, 245);
             this.txtzipcode.Name = "txtzipcode";
             this.txtzipcode.Size = new System.Drawing.Size(235, 20);
-            this.txtzipcode.TabIndex = 19;
+            this.txtzipcode.TabIndex = 18;
             // 
             // txtstate
             // 
             this.txtstate.Location = new System.Drawing.Point(311, 216);
             this.txtstate.Name = "txtstate";
             this.txtstate.Size = new System.Drawing.Size(235, 20);
-            this.txtstate.TabIndex = 20;
+            this.txtstate.TabIndex = 17;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(378, 408);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 21;
+            this.btnSubmit.TabIndex = 23;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.button1_Click);
@@ -243,7 +245,7 @@
             this.txtcellphone.Location = new System.Drawing.Point(311, 342);
             this.txtcellphone.Name = "txtcellphone";
             this.txtcellphone.Size = new System.Drawing.Size(235, 20);
-            this.txtcellphone.TabIndex = 24;
+            this.txtcellphone.TabIndex = 21;
             // 
             // label1
             // 
@@ -260,7 +262,7 @@
             this.txtinstaURL.Location = new System.Drawing.Point(311, 375);
             this.txtinstaURL.Name = "txtinstaURL";
             this.txtinstaURL.Size = new System.Drawing.Size(235, 20);
-            this.txtinstaURL.TabIndex = 26;
+            this.txtinstaURL.TabIndex = 22;
             // 
             // label12
             // 
@@ -271,11 +273,33 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Instagram URL:";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Person ID:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // lblPerson_ID
+            // 
+            this.lblPerson_ID.AutoSize = true;
+            this.lblPerson_ID.Location = new System.Drawing.Point(76, 25);
+            this.lblPerson_ID.Name = "lblPerson_ID";
+            this.lblPerson_ID.Size = new System.Drawing.Size(0, 13);
+            this.lblPerson_ID.TabIndex = 28;
+            this.lblPerson_ID.UseMnemonic = false;
+            this.lblPerson_ID.Click += new System.EventHandler(this.label14_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPerson_ID);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtinstaURL);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtcellphone);
@@ -337,6 +361,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtinstaURL;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblPerson_ID;
     }
 }
 

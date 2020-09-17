@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MG_Midterm_SE245
 {
@@ -15,6 +16,42 @@ namespace MG_Midterm_SE245
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public Form1(int intPerson_ID)
+        {
+            InitializeComponent();
+
+            //Gather info about this one person and store it in a datareader
+            PersonV2 temp = new PersonV2();
+            SqlDataReader dr = temp.FindOnePerson(intPerson_ID);
+
+            //Use that info to fill out the form
+            //Loop thru the records stored in the reader 1 record at a time
+            // Note that since this is based on one person's ID, then we
+            //  should only have one record
+            while (dr.Read())
+            {
+                //Take the Name(s) from the datareader and copy them
+                // into the appropriate text fields
+                txtfName.Text = dr["FirstName"].ToString();
+                txtmName.Text = dr["MiddleName"].ToString();
+                txtlName.Text = dr["LastName"].ToString();
+                txtStreet.Text = dr["Street1"].ToString();
+                txtStreet2.Text = dr["Street2"].ToString();
+                txtcity.Text = dr["City"].ToString();
+                txtstate.Text = dr["State"].ToString();
+                txtzipcode.Text = dr["Zipcode"].ToString();
+                txtphone.Text = dr["Phone"].ToString();
+                txtemail.Text = dr["Email"].ToString();
+                txtcellphone.Text = dr["Cellphone"].ToString();
+                txtinstaURL.Text = dr["Instagram"].ToString();
+                lblPerson_ID.Text = dr["Person_ID"].ToString();
+
+
+                //We added this one to store the ID in a new label
+                lblPerson_ID.Text = dr["Person_ID"].ToString();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -70,6 +107,16 @@ namespace MG_Midterm_SE245
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
         {
 
         }
