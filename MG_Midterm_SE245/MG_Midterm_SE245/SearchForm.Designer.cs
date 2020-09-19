@@ -112,7 +112,7 @@
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResults.Location = new System.Drawing.Point(288, 22);
             this.dgvResults.Name = "dgvResults";
-            this.dgvResults.Size = new System.Drawing.Size(500, 416);
+            this.dgvResults.Size = new System.Drawing.Size(829, 416);
             this.dgvResults.TabIndex = 6;
             this.dgvResults.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResults_CellDoubleClick);
             // 
@@ -276,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1129, 450);
             this.Controls.Add(this.txtInstagram);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCellphone);

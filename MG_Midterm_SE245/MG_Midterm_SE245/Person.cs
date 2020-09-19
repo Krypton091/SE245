@@ -21,7 +21,7 @@ namespace MG_Midterm_SE245
         private string cellphone;
         private string instagramURL;
 
-        private string feedback = "";
+        protected string feedback = "";
 
         public string FName
         {
@@ -231,5 +231,11 @@ namespace MG_Midterm_SE245
                 instagramURL = value;
             }
         }
+
+        
     }
+
+
+
+
 }

@@ -16,11 +16,16 @@ namespace MG_Midterm_SE245
         public Form1()
         {
             InitializeComponent();
+
+            btnUpdate.Visible = false;
+            btnDelete.Visible = false;
         }
 
         public Form1(int intPerson_ID)
         {
             InitializeComponent();
+
+            btnSubmit.Visible = false;
 
             //Gather info about this one person and store it in a datareader
             PersonV2 temp = new PersonV2();
@@ -118,6 +123,48 @@ namespace MG_Midterm_SE245
 
         private void label14_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            PersonV2 temp = new PersonV2();
+
+            //Getting the strings from the form and setting them in object
+            temp.FName = txtfName.Text;
+            temp.MName = txtmName.Text;
+            temp.LName = txtlName.Text;
+            temp.Street1 = txtStreet.Text;
+            temp.Street2 = txtStreet2.Text;
+            temp.City = txtcity.Text;
+            temp.State = txtstate.Text;
+            temp.Zipcode = txtzipcode.Text;
+            temp.Phone = txtphone.Text;
+            temp.Email = txtemail.Text;
+            temp.Cellphone = txtcellphone.Text;
+            temp.InstagramURL = txtinstaURL.Text;
+            temp.Person_ID = Convert.ToInt32(lblPerson_ID.Text);
+
+            if (!temp.Feedback.Contains("ERROR:"))
+            {
+                lblFeedback.Text = temp.UpdateARecord();   //if no errors weh setting values, then perform the insertion into db
+            }
+            else
+            {
+                lblFeedback.Text = temp.Feedback;       //else...dispay the error msg
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 intPerson_ID = Convert.ToInt32(lblPerson_ID.Text);  //Get the ID from the Label
+
+            //Create a EBook so we can use the delete method
+            PersonV2 temp = new PersonV2();
+
+            //Use the EBook ID and pass it to the delete function
+            // and get the number of records deleted
+            lblFeedback.Text = temp.DeleteOnePerson(intPerson_ID);
 
         }
     }

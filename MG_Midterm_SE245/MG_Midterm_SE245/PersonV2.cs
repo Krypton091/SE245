@@ -11,6 +11,30 @@ namespace MG_Midterm_SE245
     class PersonV2 : Person
     {
 
+        private int person_ID;
+
+        public Int32 Person_ID
+        {
+            get
+            {
+                return person_ID;
+            }
+
+            set
+            {
+                if (value > 0)
+                {
+                    person_ID = value;
+                }
+                else
+                {
+
+                    feedback += "\nERROR: Sorry you entered an invalid Person ID.";
+                }
+            }
+        }
+
+
         //Connect to SQL Database
         public string AddARecord()
         {
@@ -204,6 +228,111 @@ namespace MG_Midterm_SE245
 
             //Return some form of feedback
             return comm.ExecuteReader();   //Return the dataset to be used by others (the calling form)
+
+        }
+
+        public string UpdateARecord()
+        {
+            Int32 intRecords = 0;
+            string strResult = "";
+
+            //Create SQL command string
+            string strSQL = "UPDATE Persons SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Street1 = @Street1, Street2=@Street2, City=@City, State=@State, Zipcode=@Zipcode, Phone=@Phone, Email=@Email, Cellphone=@Cellphone, Instagram=@Instagram  WHERE Person_ID = @Person_ID;";
+
+            // Create a connection to DB
+            SqlConnection conn = new SqlConnection();
+            //Create the who, what where of the DB
+            string strConn = GetConnected();
+            conn.ConnectionString = strConn;
+
+            // Bark out our command
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = strSQL;  //Commander knows what to say
+            comm.Connection = conn;     //Where's the phone?  Here it is
+
+            //Fill in the paramters (Has to be created in same sequence as they are used in SQL Statement)
+            comm.Parameters.AddWithValue("@FirstName", FName);
+            comm.Parameters.AddWithValue("@MiddleName", MName);
+            comm.Parameters.AddWithValue("@LastName", LName);
+            comm.Parameters.AddWithValue("@Street1", Street1);
+            comm.Parameters.AddWithValue("@Street2", Street2);
+            comm.Parameters.AddWithValue("@City", City);
+            comm.Parameters.AddWithValue("@State", State);
+            comm.Parameters.AddWithValue("@Zipcode", Zipcode);
+            comm.Parameters.AddWithValue("@Phone", Phone);
+            comm.Parameters.AddWithValue("@Email", Email);
+            comm.Parameters.AddWithValue("@Cellphone", Cellphone);
+            comm.Parameters.AddWithValue("@Instagram", InstagramURL);
+            comm.Parameters.AddWithValue("@Person_ID", Person_ID);
+
+            try
+            {
+                //Open the connection
+                conn.Open();
+
+                //Run the Update and store the number of records effected
+                intRecords = comm.ExecuteNonQuery();
+                strResult = intRecords.ToString() + " Records Updated.";
+            }
+            catch (Exception err)
+            {
+                strResult = "ERROR: " + err.Message;                //Set feedback to state there was an error & error info
+            }
+            finally
+            {
+                //close the connection
+                conn.Close();
+            }
+
+            return strResult;
+
+        }
+
+        public string DeleteOnePerson(int intPerson_ID)
+        {
+            Int32 intRecords = 0;
+            string strResult = "";
+
+            //Create and Initialize the DB Tools we need
+            SqlConnection conn = new SqlConnection();
+            SqlCommand comm = new SqlCommand();
+
+            //My Connection String
+            string strConn = GetConnected();
+
+            //My SQL command string to pull up one EBook's data
+            string sqlString =
+           "DELETE FROM Persons WHERE Person_ID = @Person_ID;";
+
+            //Tell the connection object the who, what, where, how
+            conn.ConnectionString = strConn;
+
+            //Give the command object info it needs
+            comm.Connection = conn;
+            comm.CommandText = sqlString;
+            comm.Parameters.AddWithValue("@Person_ID", intPerson_ID);
+
+            try
+            {
+                //Open the connection
+                conn.Open();
+
+                //Run the Delete and store the number of records effected
+                intRecords = comm.ExecuteNonQuery();
+                strResult = intRecords.ToString() + " Records Deleted.";
+            }
+            catch (Exception err)
+            {
+                strResult = "ERROR: " + err.Message;                //Set feedback to state there was an error & error info
+            }
+            finally
+            {
+                //close the connection
+                conn.Close();
+            }
+
+            return strResult;
+
 
         }
 
