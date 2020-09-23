@@ -114,6 +114,7 @@
             this.dgvResults.Name = "dgvResults";
             this.dgvResults.Size = new System.Drawing.Size(829, 416);
             this.dgvResults.TabIndex = 6;
+            this.dgvResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResults_CellContentClick);
             this.dgvResults.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResults_CellDoubleClick);
             // 
             // btnSearch

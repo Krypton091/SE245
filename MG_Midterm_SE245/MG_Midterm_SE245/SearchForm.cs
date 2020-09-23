@@ -72,5 +72,10 @@ namespace MG_Midterm_SE245
         {
 
         }
+
+        private void dgvResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
